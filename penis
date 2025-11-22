@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# shaft from 10-25
+L=$(( (RANDOM % 15) + 10 ))
+
+# build the shaft
+DASHES=$(printf '%*s' "$L" '' | tr ' ' '-')
+SPACES=$(printf '%*s' "$L" '')
+
+# build the 'ruler'
+PENIS="p$(printf 'e%.0s' $(seq 1 $L))nis"
+
+echo "        $PENIS"
+echo
+
+# yeah, it's pretty big
+echo " /-----\\"
+echo "|       |"
+echo "|       |$DASHES|---\\"
+echo " \\-----/ $SPACES|   _\\"
+echo " /-----\\ $SPACES|    /"
+echo "|       |$DASHES|---/"
+echo "|       |"
+echo " \\-----/"
