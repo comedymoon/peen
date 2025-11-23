@@ -3,6 +3,7 @@
 # shaft from 10-25
 L=$(( (RANDOM % 15) + 10 ))
 
+
 # build the shaft
 DASHES=$(printf '%*s' "$L" '' | tr ' ' '-')
 SPACES=$(printf '%*s' "$L" '')
@@ -10,15 +11,58 @@ SPACES=$(printf '%*s' "$L" '')
 # build the 'ruler'
 PENIS="p$(printf 'e%.0s' $(seq 1 $L))nis"
 
-echo "        $PENIS"
-echo
+# 0.1% chance for it to be curved
+if (( RANDOM % 1000 == 0 )); then
+    CURVED=true
+else
+    CURVED=false
+fi
 
-# yeah, it's pretty big
-echo " /-----\\"
-echo "|       |"
-echo "|       |$DASHES|---\\"
-echo " \\-----/ $SPACES|   _\\"
-echo " /-----\\ $SPACES|    /"
-echo "|       |$DASHES|---/"
-echo "|       |"
-echo " \\-----/"
+# curved left or right if curved
+if $CURVED; then
+    if (( RANDOM % 2 == 0 )); then
+        CURVE="left"
+    else
+        CURVE="right"
+    fi
+fi
+
+if $CURVED; then
+
+    if [[ $CURVE == "left" ]]; then
+                echo "        curved $PENIS"
+                echo
+                echo " /-----\\"
+                echo "|       |"
+                echo "|       |$DASHES|------/"
+                echo " \\-----/ $SPACES|   _ /"
+                echo " /-----\\ $SPACES|    /"
+                echo "|       |$DASHES|---/"
+                echo "|       |"
+                echo " \\-----/"
+
+    else
+                echo "        curved $PENIS"
+                echo
+                echo " /-----\\"
+                echo "|       |"
+                echo "|       |$DASHES|---\\"
+                echo " \\-----/ $SPACES|   _\\"
+                echo " /-----\\ $SPACES|     \\"
+                echo "|       |$DASHES|------\\"
+                echo "|       |"
+                echo " \\-----/"
+    fi
+
+else
+        echo "        $PENIS"
+        echo
+    echo " /-----\\"
+    echo "|       |"
+    echo "|       |$DASHES|---\\"
+    echo " \\-----/ $SPACES|   _\\"
+    echo " /-----\\ $SPACES|    /"
+    echo "|       |$DASHES|---/"
+    echo "|       |"
+    echo " \\-----/"
+fi
