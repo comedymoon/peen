@@ -1,9 +1,10 @@
 > [!NOTE]
 > Forked from [penis](https://github.com/enhancedrock/penis/)
+> This is penis but upgraded
 # peen
 it's a bash script which prints an ascii penis to your terminal with a random length from 10-25 dashes
 
-i stole it from ruby and rebranded everything because peen is better than penis
+i stole it from ruby, upgraded and rebranded everything because peen is better than penis
 
 # demo
 ![demo](https://github.com/user-attachments/assets/d161b162-3049-4e6d-9169-e26a7452ed4e)
