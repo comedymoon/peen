@@ -1,8 +1,16 @@
 #!/bin/bash
 
+#define curved
+flag_curved=false
+#check if curved
+for x in "$@"; do
+    if [[ $x == "-c" || $x == "--curved" ]]; then
+        flag_curved=true
+    fi
+done
+
 # shaft from 10-25
 L=$(( (RANDOM % 15) + 10 ))
-
 
 # build the shaft
 DASHES=$(printf '%*s' "$L" '' | tr ' ' '-')
@@ -11,14 +19,14 @@ SPACES=$(printf '%*s' "$L" '')
 # build the 'ruler'
 PENIS="p$(printf 'e%.0s' $(seq 1 $L))nis"
 
-# 0.1% chance for it to be curved
-if (( RANDOM % 1000 == 0 )); then
+#is it curved tho
+if $flag_curved; then
     CURVED=true
 else
     CURVED=false
 fi
 
-# curved left or right if curved
+#PENIS CURVE RNG YEAHHHH
 if $CURVED; then
     if (( RANDOM % 2 == 0 )); then
         CURVE="left"
@@ -30,33 +38,33 @@ fi
 if $CURVED; then
 
     if [[ $CURVE == "left" ]]; then
-                echo "        curved $PENIS"
-                echo
-                echo " /-----\\"
-                echo "|       |"
-                echo "|       |$DASHES|------/"
-                echo " \\-----/ $SPACES|   _ /"
-                echo " /-----\\ $SPACES|    /"
-                echo "|       |$DASHES|---/"
-                echo "|       |"
-                echo " \\-----/"
+        echo "        curved $PENIS"
+        echo
+        echo " /-----\\"
+        echo "|       |"
+        echo "|       |$DASHES|------/"
+        echo " \\-----/ $SPACES|   _ /"
+        echo " /-----\\ $SPACES|    /"
+        echo "|       |$DASHES|---/"
+        echo "|       |"
+        echo " \\-----/"
 
     else
-                echo "        curved $PENIS"
-                echo
-                echo " /-----\\"
-                echo "|       |"
-                echo "|       |$DASHES|---\\"
-                echo " \\-----/ $SPACES|   _\\"
-                echo " /-----\\ $SPACES|     \\"
-                echo "|       |$DASHES|------\\"
-                echo "|       |"
-                echo " \\-----/"
+        echo "        curved $PENIS"
+        echo
+        echo " /-----\\"
+        echo "|       |"
+        echo "|       |$DASHES|---\\"
+        echo " \\-----/ $SPACES|   _\\"
+        echo " /-----\\ $SPACES|     \\"
+        echo "|       |$DASHES|------\\"
+        echo "|       |"
+        echo " \\-----/"
     fi
 
 else
-        echo "        $PENIS"
-        echo
+    echo "        $PENIS"
+    echo
     echo " /-----\\"
     echo "|       |"
     echo "|       |$DASHES|---\\"
