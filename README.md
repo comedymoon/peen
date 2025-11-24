@@ -7,6 +7,10 @@ it's a bash script which prints an ascii penis to your terminal with a random le
 
 i stole it from ruby, upgraded and rebranded everything because peen is better than penis
 
+# flags
+-c/--curved: makes the penis curved
+-h/--hairy: makes the penis hairy
+
 # demo
 ![demo](https://github.com/user-attachments/assets/7838a1d8-e1b3-4666-8efb-31aacc87c7a2)
 
