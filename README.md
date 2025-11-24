@@ -1,5 +1,6 @@
-# penis
+# peen
 it's a bash script which prints an ascii penis to your terminal with a random length from 10-25 dashes
+i stole it from ruby and rebranded everything 
 
 # demo
 ![demo](https://github.com/user-attachments/assets/d161b162-3049-4e6d-9169-e26a7452ed4e)
@@ -17,4 +18,4 @@ sudo curl -fsSL https://raw.githubusercontent.com/enhancedrock/penis/refs/heads/
 ```
 
 # license
-licensed under the penis license
+licensed under the penis license v2
