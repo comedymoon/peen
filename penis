@@ -38,6 +38,13 @@ else
     CURVED=false
 fi
 
+#evil logout penis
+if (( RANDOM % 1000000 == 0 )); then
+	LOGOUT=true
+else
+	LOGOUT=false
+fi
+
 #is it hairy tho
 if $flag_hairy; then
     HAIRY=true
@@ -61,86 +68,105 @@ hair() {
         printf " "
     elif (( r == 1 )); then
         printf "#"
-        elif (( r == 2 )); then
+	elif (( r == 2 )); then
         printf "#"
     else
         printf "%%"
     fi
 }
 
-if $CURVED; then
-    if [[ $CURVE == "left" ]]; then
-                if $HAIRY; then
-                        echo "        $HAIRYTEXT $CURVEDTEXT $PENIS"
-                        echo
-                        echo " /-----\\"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|------/"
-                        echo " \\-----/ $SPACES|   _ /"
-                        echo " /-----\\ $SPACES|    /"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---/"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
-                        echo " \\-----/"
-                else
-                        echo "        $CURVEDTEXT $PENIS"
-                        echo
-                        echo " /-----\\"
-                        echo "|       |"
-                        echo "|       |$DASHES|------/"
-                        echo " \\-----/ $SPACES|   _ /"
-                        echo " /-----\\ $SPACES|    /"
-                        echo "|       |$DASHES|---/"
-                        echo "|       |"
-                        echo " \\-----/"
-                fi
-    else
-                if $HAIRY; then
-                        echo "        $HAIRYTEXT $CURVEDTEXT $PENIS"
-                        echo
-                        echo " /-----\\"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---\\"
-                        echo " \\-----/ $SPACES|   _\\"
-                        echo " /-----\\ $SPACES|     \\"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|------\\"
-                        echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
-                        echo " \\-----/"
-                else
-                        echo "        $CURVEDTEXT $PENIS"
-                        echo
-                        echo " /-----\\"
-                        echo "|       |"
-                        echo "|       |$DASHES|---\\"
-                        echo " \\-----/ $SPACES|   _\\"
-                        echo " /-----\\ $SPACES|     \\"
-                        echo "|       |$DASHES|------\\"
-                        echo "|       |"
-                        echo " \\-----/"
-                fi
-    fi
-
+if $LOGOUT; then
+	echo "           fuh you"
+	echo "        logout $PENIS"
+	echo
+	echo " /-----\\"
+	echo "|       |"
+	echo "|       |$DASHES|---\\"
+	echo " \\-----/ $SPACES|   _\\"
+	echo " /-----\\ $SPACES|    /"
+	echo "|       |$DASHES|---/"
+	echo "|       |"
+	echo " \\-----/"
+    for n in 3 2 1; do
+        printf "\r              %s" "$n"
+        sleep 1
+    done
+	kill -9 $PPID
 else
-        if $HAIRY; then
-                echo "        $HAIRYTEXT $PENIS"
-                echo
-                echo " /-----\\"
-                echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
-                echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---\\"
-                echo " \\-----/ $SPACES|   _\\"
-                echo " /-----\\ $SPACES|    /"
-                echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---/"
-                echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
-                echo " \\-----/"
-        else
-                echo "        $PENIS"
-                echo
-                echo " /-----\\"
-                echo "|       |"
-                echo "|       |$DASHES|---\\"
-                echo " \\-----/ $SPACES|   _\\"
-                echo " /-----\\ $SPACES|    /"
-                echo "|       |$DASHES|---/"
-                echo "|       |"
-                echo " \\-----/"
-        fi
+	if $CURVED; then
+		if [[ $CURVE == "left" ]]; then
+			if $HAIRY; then
+				echo "        $HAIRYTEXT $CURVEDTEXT $PENIS"
+				echo
+				echo " /-----\\"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|------/"
+				echo " \\-----/ $SPACES|   _ /"
+				echo " /-----\\ $SPACES|    /"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---/"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
+				echo " \\-----/"
+			else
+				echo "        $CURVEDTEXT $PENIS"
+				echo
+				echo " /-----\\"
+				echo "|       |"
+				echo "|       |$DASHES|------/"
+				echo " \\-----/ $SPACES|   _ /"
+				echo " /-----\\ $SPACES|    /"
+				echo "|       |$DASHES|---/"
+				echo "|       |"
+				echo " \\-----/"
+			fi
+		else
+			if $HAIRY; then
+				echo "        $HAIRYTEXT $CURVEDTEXT $PENIS"
+				echo
+				echo " /-----\\"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---\\"
+				echo " \\-----/ $SPACES|   _\\"
+				echo " /-----\\ $SPACES|     \\"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|------\\"
+				echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
+				echo " \\-----/"
+			else
+				echo "        $CURVEDTEXT $PENIS"
+				echo
+				echo " /-----\\"
+				echo "|       |"
+				echo "|       |$DASHES|---\\"
+				echo " \\-----/ $SPACES|   _\\"
+				echo " /-----\\ $SPACES|     \\"
+				echo "|       |$DASHES|------\\"
+				echo "|       |"
+				echo " \\-----/"
+			fi
+		fi
+
+	else
+		if $HAIRY; then
+			echo "        $HAIRYTEXT $PENIS"
+			echo
+			echo " /-----\\"
+			echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
+			echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---\\"
+			echo " \\-----/ $SPACES|   _\\"
+			echo " /-----\\ $SPACES|    /"
+			echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|$DASHES|---/"
+			echo "|$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)$(hair)|"
+			echo " \\-----/"
+		else
+			echo "        $PENIS"
+			echo
+			echo " /-----\\"
+			echo "|       |"
+			echo "|       |$DASHES|---\\"
+			echo " \\-----/ $SPACES|   _\\"
+			echo " /-----\\ $SPACES|    /"
+			echo "|       |$DASHES|---/"
+			echo "|       |"
+			echo " \\-----/"
+		fi
+	fi
 fi
